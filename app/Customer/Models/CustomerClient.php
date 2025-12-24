@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace App\Customer\Models;
 
+use App\Contract\Models\Contract;
+use App\Role\Models\Role;
 use App\User\Models\User;
+use App\Wallet\Models\Wallet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
