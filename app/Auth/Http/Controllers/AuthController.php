@@ -9,10 +9,10 @@ use App\Auth\Services\AuthService;
 use App\User\Http\Resources\UserResource;
 use Illuminate\Http\JsonResponse;
 
-class AuthController
+readonly class AuthController
 {
     public function __construct(
-        private readonly AuthService $authService
+        private AuthService $authService
 
     )
     {
