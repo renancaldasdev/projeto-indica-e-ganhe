@@ -48,6 +48,8 @@ readonly class AuthService
 
         $deviceName = $data['device_name'] ?? 'web_access';
 
+        $user->tokens()->where('name', $deviceName)->delete();
+
         $token = $user->createToken($deviceName)->plainTextToken;
 
         return [

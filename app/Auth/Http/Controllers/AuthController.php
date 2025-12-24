@@ -13,7 +13,6 @@ readonly class AuthController
 {
     public function __construct(
         private AuthService $authService
-
     )
     {
     }
