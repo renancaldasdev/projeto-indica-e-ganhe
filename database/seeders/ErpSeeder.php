@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Erp\Models\Erp;
 use Illuminate\Database\Seeder;
-use App\Erp\Models\Erp; // Ajuste o namespace se necessário
 
 class ErpSeeder extends Seeder
 {
