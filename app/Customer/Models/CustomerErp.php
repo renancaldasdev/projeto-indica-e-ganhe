@@ -2,6 +2,7 @@
 
 namespace App\Customer\Models;
 
+use App\Erp\Models\Erp;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,7 +15,7 @@ class CustomerErp extends Model
     protected $fillable = [
         'customer_id',
         'erp_id',
-        'configuration',
+        'config',
         'config_points_activation',
         'config_points_recurring',
         'config_cashback_percent',
