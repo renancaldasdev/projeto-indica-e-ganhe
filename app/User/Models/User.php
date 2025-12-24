@@ -2,12 +2,15 @@
 
 namespace App\User\Models;
 
+use App\Customer\Models\CustomerClient;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 /**
  * @method static static create(array $attributes = [])
@@ -17,7 +20,7 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, softDeletes;
+    use HasFactory, Notifiable, softDeletes, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -60,5 +63,10 @@ class User extends Authenticatable
     protected static function newFactory(): \Illuminate\Database\Eloquent\Factories\Factory|UserFactory
     {
         return UserFactory::new();
+    }
+
+    public function customerClient(): HasOne
+    {
+        return $this->hasOne(CustomerClient::class, 'user_id');
     }
 }
