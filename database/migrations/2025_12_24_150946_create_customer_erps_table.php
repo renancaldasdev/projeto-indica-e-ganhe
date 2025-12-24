@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('customer_erps', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('customer_id')->constrained();
+            $table->foreignId('erp_id')->constrained();
+            $table->json('configuration');
+            $table->integer('config_points_activation')->default(0);
+            $table->integer('config_points_recurring')->default(0);
+            $table->integer('config_cashback_percent')->default(0.0);
+            $table->softDeletes();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('customer_erps');
+    }
+};

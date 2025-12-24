@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Users\Interface;
+namespace App\User\Interfaces;
 
 use App\Base\Interfaces\BaseRepositoryInterface;
 

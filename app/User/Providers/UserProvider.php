@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Users\Providers;
+namespace App\User\Providers;
 
-use App\Users\Interface\UserRepositoryInterface;
-use App\Users\Repositories\UserRepository;
+use App\User\Interfaces\UserRepositoryInterface;
+use App\User\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
 class UserProvider extends ServiceProvider
