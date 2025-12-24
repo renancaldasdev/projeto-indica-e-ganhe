@@ -29,8 +29,8 @@ class UserFactory extends Factory
         return [
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
-            'telephone' => fake()->phoneNumber(), // Dica: Configure 'faker_locale' => 'pt_BR' no config/app.php
-            'document' => fake()->numerify('###########'), // Gera 11 dígitos (Simulando CPF)
+            'telephone' => fake()->phoneNumber(),
+            'document' => fake()->numerify('###########'),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
