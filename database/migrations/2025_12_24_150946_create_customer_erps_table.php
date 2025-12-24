@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -15,7 +14,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('customer_id')->constrained();
             $table->foreignId('erp_id')->constrained();
-            $table->json('configuration');
+            $table->json('config');
             $table->integer('config_points_activation')->default(0);
             $table->integer('config_points_recurring')->default(0);
             $table->integer('config_cashback_percent')->default(0.0);

@@ -9,12 +9,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 class Customer extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'document',
+        'email',
         'corporate_name',
         'zip_code',
         'address',

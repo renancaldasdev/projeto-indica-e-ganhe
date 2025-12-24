@@ -2,6 +2,7 @@
 
 use App\Auth\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
+use App\Customer\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/ping', function () {
@@ -10,9 +11,7 @@ Route::get('/ping', function () {
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::post('/register-customer', [CustomerController::class, 'registerCustomer']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);

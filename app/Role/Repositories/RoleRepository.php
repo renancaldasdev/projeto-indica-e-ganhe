@@ -11,4 +11,11 @@ use App\Role\Models\Role;
 class RoleRepository extends BaseRepository implements RoleRepositoryInterface
 {
     protected string $model = Role::class;
+
+    public function roleFindBySlug(string $name): ?Role
+    {
+        return $this->model::query()
+            ->where('slug', $name)
+            ->first();
+    }
 }
