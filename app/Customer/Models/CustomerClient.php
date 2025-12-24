@@ -30,7 +30,7 @@ class CustomerClient extends Model
 
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Customer::class, 'customer_id')->withTrashed();
     }
 
     public function user(): BelongsTo
